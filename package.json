@@ -1,7 +1,7 @@
 {
-  "name": "electron-quick-start",
+  "name": "Promedio",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "Promedio de N Calificaciones",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
