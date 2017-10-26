@@ -12,9 +12,15 @@ function promedio(){
 
 function agregarCaja(){
   var con = document.getElementById('contenedor');
+  var cajas = document.getElementsByClassName('caja');
   con.innerHTML = con.innerHTML +
-  '<div>'+
+  '<div id="c'+(cajas.length+1)+'">'+
     '<label for="num2">Escribe un numero: </label>'+
     '<input type="number" class="caja">'+
   '</div>';
+}
+
+function quitarCaja(){
+  var cajas = document.getElementsByClassName('caja');
+  document.getElementById('c'+cajas.length).remove();
 }
