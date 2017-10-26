@@ -1,6 +1,8 @@
 
 
 function promedio(){
+
+  if(!validar()){
   var cajas = document.getElementsByClassName('caja');
   var suma=0;
   for(var i=0;i<cajas.length;i++){
@@ -8,6 +10,7 @@ function promedio(){
   }
   var promedio = suma / cajas.length;
   alert('El promedio es: '  + promedio.toFixed(2));
+}
 }
 
 function agregarCaja(){
@@ -23,4 +26,19 @@ function agregarCaja(){
 function quitarCaja(){
   var cajas = document.getElementsByClassName('caja');
   document.getElementById('c'+cajas.length).remove();
+}
+
+function validar(){
+  var error=false;
+  var cajas = document.getElementsByClassName('caja');
+      for (var i=0;i<cajas.length;i++) {
+        if(cajas[i].value.length<=0){
+            cajas[i].classList.add('caja-error');
+            error=true;
+        }else
+        {
+          cajas[i].classList.remove('caja-error');
+        }
+      }
+      return error;
 }
